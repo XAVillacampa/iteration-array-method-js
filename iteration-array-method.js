@@ -81,56 +81,128 @@ const personData = [
     }
 ];
 
-console.log("\nfor loop\n");
-for (let x = 0; x < personData.length; x++) {
-    console.log(personData[x]);
+let methods = {
+    forloop: function () {
+        console.log("\nfor loop\n");
+        for (let x = 0; x < personData.length; x++) {
+            console.log(personData[x]);
+        };
+    },
+    forinloop: function () {
+        console.log("for-in loop\n");
+        for (x in personData) {
+            console.log(personData[x])
+        };
+    },
+    forofloop: function () {
+        console.log("for-of loop\n");
+        for (x of personData) {
+            console.log(x)
+        };
+    },
+    whileloop: function () {
+        console.log("while loop\n");
+        let x = 0;
+        while (x < personData.length) {
+            console.log(personData[x]);
+            x++;
+        };
+    },
+    forEachloop: function () {
+        console.log("forEach loop\n");
+        personData.forEach(function (a, b) {
+            console.log(a);
+        });
+    },
+    filterMethod: function () {
+        console.log("Filter Method\n");
+        let ageFilter = personData.filter(function (data) { return data.age <= 25 });
+        console.log(ageFilter);
+    },
+    mapMethod: function () {
+        console.log("Map Method\n");
+        let map = personData.map(data => {
+            return {
+                'name': data.name,
+                'age': data.age
+            }
+        });
+        console.log(map);
+    },
+    reduceMethod: function () {
+        console.log("Reduce Method\n");
+        let sum = personData.reduce(function (acc, data) { return acc + data.age }, 0);
+        console.log(sum);
+    }
 };
 
+console.log(methods.forloop(personData));
+console.log("==============================\n");
+console.log(methods.forinloop(personData));
+console.log("==============================\n");
+console.log(methods.forofloop(personData));
+console.log("==============================\n");
+console.log(methods.forEachloop(personData));
+console.log("==============================\n");
+console.log(methods.whileloop(personData));
+console.log("==============================\n");
+console.log(methods.filterMethod(personData));
+console.log("==============================\n");
+console.log(methods.mapMethod(personData));
+console.log("==============================\n");
+console.log(methods.reduceMethod(personData));
 console.log("==============================\n");
 
-console.log("for-in loop\n");
-let x = 0;
-for (x in personData) {
-    console.log(personData[x])
-};
+// console.log("\nfor loop\n");
+// for (let x = 0; x < personData.length; x++) {
+//     console.log(personData[x]);
+// };
+// 
+// console.log("==============================\n");
 
-console.log("==============================\n");
+// console.log("for-in loop\n");
+// let x = 0;
+// for (x in personData) {
+//     console.log(personData[x])
+// };
+// 
+// console.log("==============================\n");
 
-console.log("for-of loop\n");
-for (x of personData) {
-    console.log(x)
-};
+// console.log("for-of loop\n");
+// for (x of personData) {
+//     console.log(x)
+// };
+// 
+// console.log("==============================\n");
 
-console.log("==============================\n");
+// console.log("While Loop\n");
+// let y = 0;
+// while (y < personData.length) {
+//     console.log(personData[y]);
+//     y++;
+// };
+// 
+// console.log("==============================\n");
 
-console.log("While Loop\n");
-let y = 0;
-while (y < personData.length) {
-    console.log(personData[y]);
-    y++;
-};
+// console.log("forEach Loop\n");
+// personData.forEach ( function (a, b) {
+//     console.log(a);
+// } );
+// 
+// console.log("==============================\n");
 
-console.log("==============================\n");
+// console.log("Filter Array Method\n");
+// let ageFilter = personData.filter( function(data) { return data.age <= 25 } );
+// console.log(ageFilter);
+// 
+// console.log("==============================\n");
 
-console.log("forEach Loop\n");
-personData.forEach ( function (a, b) {
-    console.log(a);
-} );
+// console.log("Map Array Method\n");
+// let map = personData.map(function (data) { return data.age });
+// console.log(map);
 
-console.log("==============================\n");
+// console.log("==============================\n");
 
-console.log("Filter Array Method\n");
-let ageFilter = personData.filter( function(data) { return data.age <= 25 } );
-console.log(ageFilter);
-
-console.log("==============================\n");
-
-console.log("Map Array Method\n");
-let map = personData.map( function(data) { return data.age } );
-console.log(map);
-
-console.log("==============================\n");
-
-console.log("Reduce Array Method\n");
-let sum = personData.reduce( function(acc, data) { return acc + data.age }, 0 );
-console.log(sum);
+// console.log("Reduce Array Method\n");
+// let sum = personData.reduce(function (acc, data) { return acc + data.age }, 0);
+// console.log(sum);
